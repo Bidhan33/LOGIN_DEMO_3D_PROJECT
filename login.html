@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <!-- Add your AngularJS and UI-Router script references here -->
+    <script src="angular.js"></script> <!-- Update to the actual path of AngularJS -->
+    <script src="angular-ui-router.js"></script> <!-- Update to the actual path of UI-Router -->
+    <script src="login.js"></script> <!-- Include your login.js file here -->
+</head>
+<body>
+    <div class="container" ng-app="myApp">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1> LOGIN :) </h1>
+                </div>
+            </div>
+            <div ui-view></div>
+        </div>
+
+        <!-- Your AngularJS templates go here -->
+        <script type="text/ng-template" id="login.html">
+            <!-- Login template content -->
+            <div class="col-md-12">
+                <h3>Login Page</h3>
+                <form ng-submit="formSubmit()" class="form">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="username" placeholder="username" required=""/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" ng-model="password" placeholder="password" required=""/>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Login</button>
+                            <span class="text-danger">{{ error }}</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="home.html">
+            <!-- Home template content -->
+            <div class="col-md-12">
+                <h3>Home Page</h3>
+                <a ui-sref="login">Back</a>
+            </div>
+        </script>
+    </div>
+</body>
+</html>
